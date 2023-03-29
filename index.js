@@ -1,15 +1,14 @@
 //Importando o pacote express
 const  express = require('express');
-const routesCliente = require('./routes/routesCliente')
-
-/*executando o Express*/
 const app = express();
-
 app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 
-console.log('testando!')
+const controllerVendas = require('./controller/controllerCliente')
 
-app.use('/', routesCliente);
+app.use('/', controllerVendas);
+
+
 
 // local host
 app.listen(3000,()=>{

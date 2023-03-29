@@ -21,7 +21,8 @@ const clientesController = {
                 (error) => {
                     return res.status(400).json({
                         erroStatus: true,
-                        mensagemStatus: "ERRO AO INSERIR DADOS"
+                        mensagemStatus: "ERRO AO INSERIR DADOS",
+                        erro:error
                     });
                 }
             )
@@ -33,7 +34,7 @@ const clientesController = {
                 return res.status(200).json({
                     erroStatus: false,
                     mensagemStatus: "Dados listados",
-                    errorObject:response
+                    data:response
                 })
             }
         ).catch(
