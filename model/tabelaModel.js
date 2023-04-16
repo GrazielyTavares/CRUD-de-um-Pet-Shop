@@ -33,6 +33,6 @@ const tabelaModel = connection.define(
     
 );
 
-//tabelaModel.sync({force:true});
+tabelaModel.sync({force:true});
 
 module.exports = tabelaModel;
